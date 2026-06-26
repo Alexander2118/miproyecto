@@ -1,11 +1,4 @@
-/* ══════════════════════════════════════════════════════════════
-   style.css  —  Para ti...
-   Paleta: azul noche #0d0b1e · violeta #1a1035 · rosa #ff4d8b
-           lila #c084fc · blanco cálido #f0e6ff
-   Fuentes: Dancing Script (display) · Poppins (body)
-══════════════════════════════════════════════════════════════ */
 
-/* ─── RESET & VARIABLES ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -39,7 +32,7 @@ body {
   padding-bottom: var(--music-h);
 }
 
-/* ─── CANVAS ESTRELLAS ──────────────────────────────────────── */
+/*CANVAS ESTRELLAS*/
 #stars {
   position: fixed;
   inset: 0;
@@ -47,7 +40,7 @@ body {
   z-index: 0;
 }
 
-/* ─── SECCIONES BASE ────────────────────────────────────────── */
+/*SECCIONES BASE*/
 .section {
   position: relative;
   min-height: 100vh;
@@ -65,7 +58,6 @@ body {
   padding: 80px 24px;
 }
 
-/* ─── TIPOGRAFÍA GLOBAL ─────────────────────────────────────── */
 .display-title {
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 10vw, 7rem);
@@ -92,8 +84,6 @@ body {
 .accent { color: var(--rose); font-weight: 500; }
 .heart-icon { color: var(--rose); }
 .heart-icon.small { font-size: .75em; }
-
-/* ─── HERO ──────────────────────────────────────────────────── */
 .hero {
   flex-direction: column;
   text-align: center;
@@ -104,7 +94,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-color: var(--deep);   /* fallback si no hay imagen */
+  background-color: var(--deep); 
   transform: scale(1.05);
   transition: transform 8s ease;
   z-index: 0;
@@ -172,7 +162,6 @@ body {
   50%       { transform: translateY(8px); opacity: 1; }
 }
 
-/* Hero dots */
 .hero-dots {
   position: absolute;
   right: 28px;
@@ -193,7 +182,6 @@ body {
 }
 .dot.active { background: var(--rose); border-color: var(--rose); box-shadow: var(--glow-rose); }
 
-/* ─── MEMORIES (CARRUSEL) ───────────────────────────────────── */
 .memories {
   background: linear-gradient(180deg, var(--night) 0%, var(--deep) 50%, var(--night) 100%);
 }
@@ -211,12 +199,10 @@ body {
   overflow: hidden;
   flex: 1;
   scroll-behavior: smooth;
-  /* Hide scrollbar */
   scrollbar-width: none;
 }
 .memories-track::-webkit-scrollbar { display: none; }
 
-/* Flechas */
 .mem-arrow {
   flex-shrink: 0;
   width: 44px;
@@ -239,7 +225,6 @@ body {
   box-shadow: var(--glow-rose);
 }
 
-/* Tarjetas */
 .mem-card {
   flex: 0 0 calc(25% - 15px);
   min-width: 180px;
@@ -284,7 +269,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Se oculta si hay background-image real */
   pointer-events: none;
 }
 
@@ -303,7 +287,6 @@ body {
   line-height: 1.4;
 }
 
-/* Dots del carrusel */
 .mem-dots {
   display: flex;
   justify-content: center;
@@ -321,7 +304,7 @@ body {
 }
 .mem-dot.active { background: var(--rose); border-color: var(--rose); box-shadow: var(--glow-rose); }
 
-/* ─── GRACIAS POR ───────────────────────────────────────────── */
+/*Agradecimiento*/
 .thanks {
   background: var(--night);
 }
@@ -378,7 +361,7 @@ body {
 }
 .thanks-item:hover p { color: var(--cream); }
 
-/* ─── CARTA ─────────────────────────────────────────────────── */
+/*CARTA*/
 .letter {
   background: linear-gradient(135deg, var(--deep) 0%, var(--night) 100%);
 }
@@ -448,7 +431,7 @@ body {
   100% { transform: scale(1.2); }
 }
 
-/* ─── DESPEDIDA ─────────────────────────────────────────────── */
+/*DESPEDIDA*/
 .farewell {
   text-align: center;
   flex-direction: column;
@@ -490,7 +473,7 @@ body {
   50%       { transform: translateY(-14px) scale(1.1); }
 }
 
-/* ─── BARRA DE MÚSICA ───────────────────────────────────────── */
+/* BARRA DE MÚSICA */
 .music-bar {
   position: fixed;
   bottom: 0;
@@ -508,7 +491,6 @@ body {
   z-index: 100;
 }
 
-/* Info del track */
 .music-info {
   display: flex;
   align-items: center;
@@ -565,7 +547,7 @@ body {
 }
 .music-fav.liked { color: var(--rose); }
 
-/* Controles */
+/* Controles*/
 .music-controls {
   display: flex;
   align-items: center;
@@ -598,7 +580,6 @@ body {
 }
 .play-btn:hover { transform: scale(1.08) !important; box-shadow: 0 0 30px rgba(255,77,139,.7) !important; }
 
-/* Lado derecho: progreso + volumen */
 .music-right {
   display: flex;
   flex-direction: column;
@@ -675,15 +656,13 @@ body {
   border: none;
 }
 
-/* ─── ANIMACIONES GENERALES ─────────────────────────────────── */
+/*ANIMACIONES*/
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — TABLET
-══════════════════════════════════════════════════════════════ */
+/*RESPONSIVE — TABLET*/
 @media (max-width: 900px) {
   .thanks-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -700,9 +679,7 @@ body {
   }
 }
 
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE — MÓVIL
-══════════════════════════════════════════════════════════════ */
+/*RESPONSIVE*/
 @media (max-width: 600px) {
   :root { --music-h: 70px; }
 
@@ -718,7 +695,7 @@ body {
     min-width: unset;
   }
 
-  /* Barra de música en móvil */
+  /* Barra de música */
   .music-bar {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
@@ -727,7 +704,7 @@ body {
     gap: 8px;
   }
   .music-right {
-    display: none; /* simplificamos en móvil */
+    display: none;
   }
   .music-info {
     grid-column: 1;
@@ -758,7 +735,7 @@ body {
   .farewell-title { font-size: 2.2rem; }
 }
 
-/* ─── REDUCED MOTION ────────────────────────────────────────── */
+/*REDUCED MOTION*/
 @media (prefers-reduced-motion: reduce) {
   .farewell-heart, .scroll-pill, .hero-bg { animation: none; transition: none; }
 }
